@@ -1,18 +1,26 @@
 <script lang="ts">
-    import Tailwind from "./components/css/tailwind.svelte"
-	import Header from "./components/header.svelte";
+	import Tailwind from "./components/css/tailwind.svelte"
+	import Header from "./components/Header.svelte";
+	import Router from "./components/Router.svelte";
+	import Global from './components/css/global.svelte'
+	import TopCarouselBanner from './components/top-carousel-banner/top-carousel-banner.svelte';
+	import ProductService from "./backend/services/product.service";
+
+	const ps = new ProductService();
+	ps.products();
 </script>
 
 <Tailwind />
+<Global />
 <Header />
-<main>
-    <h1 class="text-red-400">The rest of our app will be here</h1>
+<TopCarouselBanner />
+
+<main class="flex-grow">
+	<Router />
 </main>
 
 <style lang="scss">
 	main {
-		h1 {
-			font-size: 200px;
-		}
+		margin-bottom: 150px;
 	}
 </style>
