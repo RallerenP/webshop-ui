@@ -5,12 +5,12 @@
     import ShopGrid from './components/shop-grid/ShopGrid.svelte';
     import ProductService from "../../backend/services/product.service";
 
-    const ps = new ProductService();
+    export let productService;
 </script>
 
 <Page>
     <ShopDescription />
-    <ShopGrid productService="{ps}" />
+    <ShopGrid {productService} />
 </Page>
 
 

@@ -16,7 +16,7 @@
 <div class="flex-grow-0 m-8 shop-item-container">
     {#if products}
         {#each products as product}
-            <ProductElement name={product.name} code="{product.code}" class="product flex-grow-0 flex-shrink-0  product" />
+            <ProductElement id="{product.id}" name={product.name} code="{product.code}" class="product flex-grow-0 flex-shrink-0  product" />
         {/each}
     {/if}
 </div>

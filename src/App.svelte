@@ -21,6 +21,5 @@
 
 <style lang="scss">
 	main {
-		margin-bottom: 150px;
 	}
 </style>

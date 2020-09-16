@@ -1,5 +1,7 @@
 <script lang="ts">
     import Center from "../css/center.svelte";
+    import { fly } from 'svelte/transition';
+    import { onMount } from "svelte";
 
     export let count: number = 109;
 </script>

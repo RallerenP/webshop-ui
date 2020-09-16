@@ -1,9 +1,11 @@
 <script>
+    import CartBtn from "./header/cart-btn.svelte";
+    import Navlink from "./header/navlink.svelte";
+    import Logo from "./Logo.svelte";
+    import { onMount } from 'svelte';
+    import ProductService from "../backend/services/product.service";
 
-import CartBtn from "./header/cart-btn.svelte";
-import Navlink from "./header/navlink.svelte";
-import Logo from "./Logo.svelte";
-
+    let cartStore = ProductService.getInstance().getCartStore();
 </script>
 
 <div class="border-gray-300 border-b flex flex-row justify-center h-24 py-4 px-6 flex-shrink-0" >
@@ -21,5 +23,5 @@ import Logo from "./Logo.svelte";
             <Navlink href="/about">ABOUT US</Navlink>
         </div>
     </div>
-    <CartBtn />
+    <CartBtn count={$cartStore.count()}/>
 </div>
